@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Supprimer l'article</h1>
+
+<p>Êtes-vous sûr de vouloir supprimer l'article "<strong>{{ article.titre }}</strong>" ?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Oui, supprimer</button>
+    <a href="{% url 'liste_articles' %}" class="btn btn-secondary">Annuler</a>
+</form>
+{% endblock %}
